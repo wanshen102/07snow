@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"    >
+<head>
+<html lang="zh-cn" style="height: 100%;">
+<title>07snow蛋味饭 - 专享优质生活，尽享舌尖美味，一站式服务，给你家的味道！</title>
+<link rel="stylesheet" type="text/css" href="public/css/common.css">
+<link rel="stylesheet" type="text/css" href="public/css/appdeal.css">
+<link rel="stylesheet" type="text/css" href="public/css/bindeal.css">
+<style>
+.wish2_nav{
+left: 50%;
+margin-left: -620px;
+}
+</style>
+<include file='public/include/header.html' />
+
+        <div class="channel_nav_box">
+            <div class="channel_nav_list_wrap clearfix">
+    <div class="header_bottom">
+            <ul class="channel_nav_list">
+                    <li class="current"><a href="#" class="home" >首页</a></li>
+<!--                    <li ><a href="__APP__/Home/goods/goods_list">菜谱<b></b></a></li>-->
+                    <li class="bz " id="zpbz" >
+                        <a href="__APP__/Home/User/gr_wddd_ddfk">个人中心<b></b></a>
+                       
+                    </li>
+            </ul>
+            </div>
+        </div>
+            </div>
+            	<div id="container" >
+        <div align='center' class="img_slider_new1">
+        <ul class="img_slider newuser_xihu_con" >
+               <li><img src="public/image/abc.jpg"></li>
+        </ul>
+    </div>
+    <div id="body">
+    <div class="mustsee" id="mustsee">
+                                <h1 class="floor-head" id='flag_id'></h1>
+                                </div>
+    				            <div class="top_ad">
+       <img src="public/image/bannerxx.png">
+        <a class="today_ad" href="#"  ></a><a class="tom_ad02" href="#"  ></a>
+    </div>
+<div class="must_see_content" id="must_see">
+		 <div class="must_see_box_wrap">
+    </div>
+    </div>
+   	<foreach name='info' item='vo'>
+    <div id="baokuan">
+        <div class="bk_tab_content">
+        		  <div class="bk-con">
+                <div class="deal-img-wrap"><br>
+<a href="index.php/Home/goods/goods_desc?id={$vo.goods_id}"  class="deal-img-link">
+                    <img src="public/goods_image/x.gif" data-original="http://www.07snow.com/public/goods_image/{$vo.goods_imgs}"class="img_pos_115"   width="500" height="330"  />
+                    <a href="#"   class="deal-img-link">
+                                               <span class="top_1"></span>
+                </div>
+				<div class="deal-summary">
+                    <div class="newindex-deal-timer">
+                        <span class="bk-timeleft begin_timer today_end_time"  start_time="1421416800">{$vo.goods_name}介绍</span>
+                    </div> 
+					<a href="#"  class="deal-summary-link">  
+						<p class="tit">                                     	
+													{$vo.goods_desc}
+                        </p>
+                        <div class="price_wrap clearfix">    
+                       <span class="price" style="float:right">¥{$vo.market_price}</span>
+                            
+							 <div class="gotocart_wrap"  >
+          <a href='__APP__/Home/cart/cart_add?id={$vo.goods_id}'class="detail_btn buying" id="shop_cart">快到碗里去</a>
+                        </div>     
+                        </div>
+                    	              <div>
+                                        </a>
+                                    </div>
+                                    </div>
+            </div>
+  </div>    </div>    
+							</foreach>
+<include file="public/include/footer.html"/>
+<script type="text/javascript" src="public/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="public/js/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(function () {
+$("img").lazyload({
+effect: "fadeIn"
+});
+});
+</script>

@@ -1,0 +1,338 @@
+<include file="public/include/head.html"/>
+<html>
+<style>
+    .wish2_nav{
+        left: 50%;
+        margin-left: -620px;
+    }
+     .profile td a.sp_icon {
+            display: inline-block;
+        }
+    .order_package span {
+        padding-right: 0;
+    }
+    .profile .filter+table th {
+        border: 1px solid rgb(219, 214, 208);
+        border-top: 0;
+        }
+    .invoice_layer .invoice_type {position:relative;top:3px;}
+    .invoice_layer .invoice_label {padding-left:10px;}
+    .invoice_layer .invoice_company {margin-top:25px;width:360px;}
+    .invoice_layer .onsale_layer_wrap {padding: 20px 0 0;}
+    .invoice_layer .onsale_input_wrap {padding: 0 30px;}
+    .invoice_layer .invoice_btn_wrap {padding:15px 0;margin-top:20px;background:#fafafa;text-align:center;}
+    .invoice_layer .invoice_cancel {box-shadow:none;}
+    .invoice_layer [type="text"][disabled],.invoice_layer [type="text"][readonly] { background: #f1f1f1; }
+      .sp_icon_pos_inner {
+            display: none;
+        }
+        .sp_icon_pos_wrapper {
+            position: absolute;
+            z-index: 2;
+            border: 1px solid #DBD6D0;
+            width: 300px;
+            line-height: 18px;
+            padding: 5px 12px;
+            background: #FCFCFC;
+            color: #676767;
+            display: none;
+        }
+        .body{
+            background-color: background;
+        }
+</style>
+<body>
+<div class="header_bottom">
+    <div class="channel_nav_box">
+        <div class="channel_nav_list_wrap clearfix">
+            <ul class="channel_nav_list">
+                <li ><a href="" class="home" >首页</a></li>
+                <li><a href="" target="_blank">菜谱</a></li>
+                <li><a href="" target="_blank">个人中心</a></li>
+                <li >
+                    <a href="">美味十足<b></b></a>
+                </li>
+                <li class="bz " id="zpbz" >
+                    <a href="">正品保证<b></b></a>
+                    <ul class="bz_list">
+                        <li><a href="" target="_blank">在美上市</a></li>
+                        <li><a href="" target="_blank">品牌防伪码</a></li>
+                        <li><a href="" target="_blank">无理由退货</a></li>
+                        <li><a href="" target="_blank">色谱检测</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 加判断 -->
+            <ul id="icon_wrap" class="icon_Wrap">
+                <li>
+                    <div class="divlist divlist01">
+                        <a target="_blank" href=""><span></span> <b>品牌防伪码</b></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="divlist divlist02">
+                        <a target="_blank" href=""><span class="th"></span><b>美妆30天无理由退货</b></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="divlist divlist03">
+                        <a target="_blank" href=""><span class="by"></span> <b>美妆满2件或299包邮</b></a>
+                    </div>
+                </li>
+            </ul>
+            <!-- 加判断 -->
+        </div>
+    </div>
+</div>
+
+<div class="profile">
+    <!--[if lte IE 8]>
+            <script src="http://s0.jmstatic.com/templates/jumei/js/v41.7/Jumei.Usercenter.ie.min.js?v13">
+    </script>
+    <![endif]-->
+    <include file="public/include/left.html" />
+    <h1>
+        <a href="" target="_blank">手机客户端，随时随地查看物流详情</a>
+        我的订单
+    </h1>
+    <div class="content">
+        <div class="banner" style="margin-bottom: 10px;">
+            <a href="" target="_blank">
+                <img src="" alt="">
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="__APP__/Home/User/gr_wddd_ddfk_list?id=0">全部订单</a>
+            <a href="__APP__/Home/User/gr_wddd_ddfk_list?id=1">等待付款</a>
+            <a href="__APP__/Home/User/gr_wddd_ddfk_list?id=2">已付款</a>
+            <a href="__APP__/Home/User/gr_wddd_ddfk_list?id=3">交易完成</a>
+            <a href="__APP__/Home/User/gr_wddd_ddfk_list?id=4">无效</a>
+        </div>
+
+
+        <table id="order-list" class="order_table">
+            <tr class="order_list_title">
+                <th width="195">订单信息</th>
+                <th width="80">订购商品</th>
+                <th width="40">件数</th>
+                <th width="80">单价</th>
+                <th width="70">商品操作</th>
+                <th width="90">订单金额</th>
+                <th>订单状态</th>
+                <th width="90">订单操作</th>
+            </tr>
+
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="order_info_td">
+                        <p>订单号：{$vo.indent_no}</p>
+                        <p>下单时间：{$vo.add_time}</p>
+                        <p>由<font style="color:red">{$vo.express}</font>发货</p>
+                    </td>
+                    <td class="item_title">
+
+                    </td>
+                    <td>{$vo.goods_num}</td>
+                    <td>¥{$vo.price}</td>
+                    <td >
+                    </td>
+
+                    <td>
+                        <p class="bold">¥{$vo.total_price} </p>
+                        <p><span class="grey">(免运费)</span></p>
+                    </td>
+                    <td>
+                        <span class="status_red">
+                            <if condition="$vo['status'] eq 0">
+                                订单无操作
+                                <div>在线支付</div>
+                                <elseif condition="$vo['status'] eq 1"/>
+                                等待付款
+                                <div>在线支付</div>
+                                <elseif condition="$vo['status'] eq 2"/>
+                                已付款
+                                <div>在线支付</div>
+                                <elseif condition="$vo['status'] eq 3"/>
+                                交易完成
+                                <div>在线支付</div>
+                                <elseif condition="$vo['status'] eq 4"/>
+                                <font style="color:rosybrown">已取消</font>
+                            </if>
+                        </span>
+                        <!--判断海淘自营订单包裹状态显示-->
+                    </td>
+                    <td>
+                <if condition="$vo['status'] eq 1 OR $vo['status'] eq 0">
+                    <p> <a href="">查看订单</a></p>
+                    <p><a href="javascript:void (0) " class="btn_mid_pink">点击付款</a></p>
+                    <p>
+                        <a href="__APP__/Home/User/gr_wddd_ddfk_cancel?num={$vo.indent_no}" class="order-cancel">取消</a>
+                    </p>
+                    <p><a href="__APP__/Home/user/gr_address">修改地址</a></p>
+                    <elseif condition="$vo['status'] eq 4"/>
+                    <p> <a href="">查看订单</a></p>
+                </if>
+                </td>
+                </tr>
+            </volist>
+        </table>
+
+
+        <!--<div class="null_info">
+            <h2>
+                您目前没有等待付款的订单
+            </h2>
+        </div>-->
+
+    </div>
+
+    <style>
+      
+    </style>
+</div>
+
+
+<div class="clear"></div>    
+
+<div id="footer_container" >
+    <div id="footer_textarea">
+        <div style="display:none"><a href="">每日更新</a></div>
+        <textarea style="display: none">                <div class="footer_top">
+               
+        </div>
+        <div class="footer_top_sen">
+                <div class="footer_con" id="footer_links">
+                    <ul class="linksa png">
+                        <li class="links">服务保障</li>
+                        <li><a href="" target="_blank" rel="nofollow">品牌真品防伪码</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">100%正品保证</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">30天无条件退货</a></li>                       
+                        <li><a href="" target="_blank" rel="nofollow">7×24小时客服服务</a></li>
+                        <li><span class="footer_zcemail">总裁邮箱ceo@jumei.com</span></li>
+                    </ul>
+
+                    <ul class="linksb png">
+                        <li class="links">使用帮助</li>
+                        <li><a href="" target="_blank" rel="nofollow">新手指南</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">常见问题</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">帮助中心</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">用户协议</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">企业用户团购</a></li>
+                    </ul>
+
+                    <ul class="linksc png">
+                        <li class="links">支付方式</li>
+                        <li><a href="" target="_blank" rel="nofollow">货到付款</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">在线支付</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">余额支付</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">现金券支付</a></li>
+                    </ul>
+
+                    <ul class="linksd png">
+                        <li class="links">配送方式</li>
+                        <li><a href="" target="_blank" rel="nofollow">包邮政策</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">配送说明</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">运费说明</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">验货签收</a></li>
+                    </ul>
+
+                    <ul class="linkse png">
+                        <li class="links">售后服务</li>
+                        <li><a href="" target="_blank" rel="nofollow">正品承诺</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">售后咨询</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">退货政策</a></li>
+                        <li><a href="" target="_blank" rel="nofollow">退货办理</a></li>
+                    </ul>
+
+                    <span class="links_er_box">
+                        <ul class="linksf">
+                            <li class="links">手机聚美</li>
+                            <li><span class="link_bottom_pic"></span></li>
+                            <li>下载移动客户端</li>
+                        </ul>
+                        <ul class="linksg">
+                            <li class="links">聚美微信</li>
+                            <li><span class="link_bottom_pic"></span></li>
+                            <li>聚美官方微信</li>
+                        </ul>
+                    </span>
+                </div>
+        </div>
+        <div class="footer_dy" id="footer_dy">
+            <div class="play_box"><span class="play"></span></div>
+        </div>
+        <div class="footer_center" >
+            <div class="footer_con" id="footer_link">
+                    <a href="" target="_blank" rel="nofollow">关于聚美优品</a>
+                    <a href="" target="_blank" rel="nofollow">INVESTOR RELATIONS</a>
+                    <a href="" target="_blank" rel="nofollow">商家入驻</a>
+                    <a href="" target="_blank" rel="nofollow">获取更新</a>
+                    <a href="" target="_blank" rel="nofollow">加入聚美</a>
+                    <a href="" target="_blank" rel="nofollow">品牌合作专区</a>
+                    <a href="" target="_blank" rel="nofollow">网站联盟</a>
+                    <a href="" target="_blank" rel="nofollow">媒体报道</a>
+                    <a href="" target="_blank" rel="nofollow">商务合作</a>
+            </div>
+        </div>
+        
+        <div id="footer_copyright">
+            <div class="footer_con">
+                <p class="footer_copy_con">
+                    COPYRIGHT &copy; 2010-2015 北京创锐文化传媒有限公司 JUMEI.COM 保留一切权利。                  
+                    客服热线：400-123-8888 
+                    <br/>
+                    京公网安备 11010102001226 | <a href="" target="_blank" rel="nofollow">京ICP证111033号</a> | 食品流通许可证 SP1101051110165515（1-1）
+                    | <a href="" target="_blank" rel="nofollow">营业执照</a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" class="footer_copy_logo logo01" rel="nofollow"></a>
+                    <a href="javascript:void(0)" target="_blank" class="footer_copy_logo logo02" rel="nofollow"></a>
+                    <a href="javascript:void(0)" class="footer_copy_logo logo03" rel="nofollow"></a>
+                    <a href="javascript:void(0)" class="footer_copy_logo logo04" rel="nofollow"></a>
+                    <a href="javascript:void(0)" target="_blank" class="footer_copy_logo logo05" rel="nofollow"></a>
+                </p>
+            
+                <script>
+                    function change_urlknet(eleId) {
+                        var str = document.getElementById(eleId).href;
+                        var str1 = str.substring(0, (str.length - 6));
+                        str1 += RndNum(6);
+                        document.getElementById(eleId).href = str1;
+                    }
+                    function RndNum(k) {
+                        var rnd = "";
+                        for (var i = 0; i < k; i++) {
+                            rnd += Math.floor(Math.random() * 10);
+                        }
+                        return rnd;
+                    }
+                </script>
+            </div>
+        </div>
+        </textarea>
+</div>
+<script type="text/javascript">
+                    $(document).ready(function() {
+                        Jumei.Core.init();
+                        //Jumei.Order.init();
+
+                        for (var i in Jumei.Core.afterInitFunctions)
+                            Jumei.Core.afterInitFunctions[i].call();
+
+                        /*
+                         if(Math.abs(RM_CLIENT_TIME-RM_SERVER_TIME)>=86400) {
+                         var serverDate = new Date(RM_SERVER_TIME * 1000);
+                         var clientDate = new Date(RM_CLIENT_TIME * 1000);
+                         function d(d) { return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日 "+d.getHours()+"时"+d.getMinutes()+"分";}
+                         Jumei.Core.postAdhocNotification($('#container'), false, "prepend", {
+                         type: "error",
+                         message: "您的计算机时间("+d(clientDate)+")可能不对，可能会导致购物遇到问题。请把计算机时间调整为正确时间("+d(serverDate)+")"
+                         });
+                         }
+                         */
+                    });
+</script>
+</body>
+</html>

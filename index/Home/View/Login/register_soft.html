@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="qc:admins" content="56207406376255516375">
+    <title>通行证 - Snow</title>
+
+<link rel="stylesheet" href="https://secure2.jmstatic.com/static_passport/dist/20150106_2/css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/css/jumei_sign.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+
+<!-- KEEP THIS!
+<body>
+-->
+<body>
+
+		    <style>
+    .top_nav_hot{ position: absolute;left:81px;top:-4px;}
+
+</style>
+<div id="header_container">
+    <!--新版的login页面没有头部 -->
+    <div id="logo">
+        <a href="__APP__/Home/login/login" id="home" title="" style="background:url(  __PUBLIC__/image/snow1.jpg  ) no-repeat top left;"> 
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--抽奖弹出层开始-->
+<div style="display: none;" class="newUserRedEnvelope">
+	<div class="nUREClose png">
+	</div>
+	<div class="nugoShopping">
+	</div>
+	<div class="nuReceive">
+	  <embed src="" quality="high" allowscriptaccess="always" allowfullscreen="true" mode="transparent" type="application/x-shockwave-flash" class="nuObject" wmode="transparent" align="middle">
+	</div>
+	<div class="nuPointer">
+	</div>
+	<div class="nuNotice">
+	</div>
+</div>
+<div class="newUserRedEnvelopeRes">
+	<div class="nURECloseRes png">
+	</div>
+	<div class="nugoShoppingRes">
+	</div>
+	<div class="nuReceiveRes">
+	</div>
+	<div class="nuNoticeRes">
+	</div>
+</div>
+<div class="newUserShade" style="display: none;"></div>
+<!--抽奖弹出层结束-->
+
+<div class="sign_main signok">
+	<div class="main">
+        <h1></h1>
+            <a >欢迎您加入07Snow订餐网,</a>
+                  
+
+		<div class="notice">
+			<h2>07Snow，让您吃的满意，订餐更开心！</h2>
+			<h3>亲爱的用户：抓紧绑定邮箱吧对您的服务更专一</h3><br>
+            		<form method="get" action="">
+					您的邮箱：
+					<div class="textbox_ui ">
+						<input class="type_email" name="email" id="email" autocomplete="off">
+						<div class="focus_text"></div>
+						<div class="invalid">
+							<i></i>
+							<div class="required"></div>
+							<div class="format"></div>
+							<div class="custom"></div>
+						</div>
+						<i class="valid"></i>
+						<i style="display: none;" class="loading"></i>
+					</div>
+					 <input  type="button" value="绑定邮箱" onclick="return c()" style="background-color:#e5406e;border:1px #ff0000 solid;color:white;font-weight:bold;height:37px;cursor:pointer;width: 20%;">
+				</form>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id='cmy'></span>
+		<script type="text/javascript" src="__PUBLIC__/js/jq.js"></script>
+		<script type="text/javascript">
+			function c(){
+				email=$("#email").val();
+				var r_eamil=/^\w+@\w+(\.)\w+$/
+				if(email==""){
+					$("#cmy").html("<font color='#999'>请您输入邮箱账号，享受更优质的服务</font>");
+					return false;
+				}else{
+					if(r_eamil.test(email)){
+						//alert(email);
+						$.ajax({
+							  url:"__APP__/Home/login/zhuccc",
+							  data:{"email":email},
+							  type:"get",
+							  success:function(e){
+								 //alert(e);
+								 if(e==1){
+									$("#cmy").html("<font color='#999'>您输入的邮箱已被绑定，请重新输入</font>");
+								 }else{
+										location.href='__APP__/Home/login/register_sof';
+								 }
+							}
+						});
+						$("#cmy").html(" ");
+						return true
+					}else{
+						$("#cmy").html("<font color='#999'>您输入的邮箱格式错误，请输入正确的邮箱</font>");
+						return false;
+					}
+				}
+				
+			}
+		</script>
+
+
+		</div>
+    
+  
+	</div>
+	<div class="shadow_l"></div>
+	<div class="shadow_r"></div>
+</div>
+</div>
+<div class="clear"></div>
+
+
+<div id="footer_container" style="padding-top:5px;background: none;border-top: none;">
+<div id="footer_textarea">
+<div style="display:none"><a href="">每日更新</a></div>
+<div class="footer_con" id="footer_copyright">
+   <p class="footer_copy_con">
+            Copyright &copy; 2015-2015 北京07Snow有限公司 07snow.com 保留一切权利。客服地址：Bw丶38305 <br/>
+            京公网安备 11010102001226 号 | <a href="" target="_blank" rel="nofollow">京ICP证111033号</a> | 食品流通许可证 SP1101051110165515（1-1）
+            | <a href=""  rel="nofollow">营业执照</a>
+        </p>
+    <p>
+      
+        <a href="" class="footer_copy_logo logo02" rel="nofollow"></a>
+        <a href="javascript:void(0)" class="footer_copy_logo logo03" rel="nofollow"></a>
+        <a href="javascript:void(0)" class="footer_copy_logo logo04" rel="nofollow"></a>
+        <a href=""  class="footer_copy_logo logo05" rel="nofollow"></a>
+    </p>
+</div>
+
+</div>
+</div>
+<!--*连续登陆探测 -->
+		
+
+        <script type="text/javascript" charset="utf-8" src="%E9%80%9A%E8%A1%8C%E8%AF%81%20-%20%E8%81%9A%E7%BE%8E%E4%BC%98%E5%93%81_files/Jumei_003.js"></script>
+    
+
+
+<div style="display:inline;visibility: hidden;"><img style="border-style:none;" alt="" src="%E9%80%9A%E8%A1%8C%E8%AF%81%20-%20%E8%81%9A%E7%BE%8E%E4%BC%98%E5%93%81_files/a.gif" height="1" width="1"></div><ul style="z-index: 1; top: 0px; left: 0px; display: none;" aria-activedescendant="ui-active-menuitem" role="listbox" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all"></ul><iframe id="emar_box_pv" src="%E9%80%9A%E8%A1%8C%E8%AF%81%20-%20%E8%81%9A%E7%BE%8E%E4%BC%98%E5%93%81_files/_adw.htm" style="width: 1px; border: 0px none; position: absolute; left: -100px; top: -100px; height: 1px;"></iframe></body></html>

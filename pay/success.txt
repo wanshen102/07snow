@@ -1,0 +1,21 @@
+Array
+(
+    [body] => 测试支付宝支付接口信息
+    [buyer_email] => liming@com133.com
+    [buyer_id] => 2088202199185384
+    [exterface] => create_direct_pay_by_user
+    [is_success] => T
+    [notify_id] => RqPnCoPT3K9%2Fvwbh3InR9wkzi6nzeH8dEyiDlvkPGEq7TqBoZaJmWbUyzZnfEyoR203e
+    [notify_time] => 2014-07-26 08:39:42
+    [notify_type] => trade_status_sync
+    [out_trade_no] => 20140726083425
+    [payment_type] => 1
+    [seller_email] => li1209@126.com
+    [seller_id] => 2088002075883504
+    [subject] => 测试商品
+    [total_fee] => 0.01
+    [trade_no] => 2014072658931238
+    [trade_status] => TRADE_SUCCESS
+    [sign] => b3ac9b3457a56490000d325a35a0a7d3
+    [sign_type] => MD5
+)

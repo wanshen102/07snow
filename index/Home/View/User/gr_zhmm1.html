@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="qc:admins" content="56207406376255516375" />
+    <title>找回密码</title>
+
+
+<link rel="stylesheet" href="https://secure1.jmstatic.com/static_passport/dist/20150106_2/css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://secure4.jmstatic.com/static_passport/dist/20150106_2/css/jumei_sign.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://secure4.jmstatic.com/static_passport/dist/20150106_2/css/jumei.forget.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript">
+with(window) {
+    RM_SITE_MAIN_WEBBASEURL='http://www.jumei.com/';
+RM_SITE_MAIN_TOPLEVELDOMAINNAME='jumei.com';
+RM_CONTROL='Account';
+RM_ACTION='forget_pass';
+RM_IMGDIR='https://secure5.jmstatic.com/static_passport/dist/20150106_2/images';
+    RM_CLIENT_TIME = parseInt((new Date()).getTime() / 1000);
+            GA_ACCOUNT = "UA-10208510-1";
+    }
+var screen_wide = document.documentElement.clientWidth > 1200 ? true : false ;
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+        return (arr[2]);
+    else
+        return null;
+}
+RM_UID = getCookie('uid');
+RM_NICKNAME = null;
+if ( getCookie('nickname') != null ){
+    RM_NICKNAME = decodeURIComponent(getCookie('nickname'));
+}
+var is_semwinner = false;
+
+window._adwq = window._adwq || [];
+_adwq.push(['_setAccount', '1ng4e']);
+_adwq.push(['_setDomainName', '.jumei.com']);
+_adwq.push(['_trackPageview']);
+
+window._gaq = window._gaq || [];
+_gaq.push(['_setAccount', GA_ACCOUNT]);
+_gaq.push(['_addOrganic', 'baidu', 'wd']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'm.baidu', 'word']);
+_gaq.push(['_addOrganic', 'wap.baidu', 'word']);
+_gaq.push(['_addOrganic', 'baidu', 'kw']);
+_gaq.push(['_addOrganic', 'baidu', 'q1']);
+_gaq.push(['_addOrganic', 'baidu', 'q2']);
+_gaq.push(['_addOrganic', 'baidu', 'q3']);
+_gaq.push(['_addOrganic', 'baidu', 'q4']);
+_gaq.push(['_addOrganic', 'baidu', 'q5']);
+_gaq.push(['_addOrganic', 'baidu', 'q6']);
+_gaq.push(['_addOrganic', 'so.com', 'q']);
+_gaq.push(['_addOrganic', 'image.baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addIgnoredOrganic', 'jumei.com']);
+_gaq.push(['_addIgnoredOrganic', 'www.jumei.com']);
+_gaq.push(['_addIgnoredOrganic', 'jumei']);
+_gaq.push(['_addIgnoredOrganic', '聚美']);
+_gaq.push(['_addIgnoredOrganic', '聚美优品']);
+_gaq.push(['_addIgnoredOrganic', 'tuanmei.net']);
+_gaq.push(['_addIgnoredOrganic', 'www.tuanmei.net']);
+_gaq.push(['_addIgnoredOrganic', 'tuanmei']);
+_gaq.push(['_addIgnoredOrganic', '团美']);
+_gaq.push(['_addIgnoredRef', 'jumei']);
+_gaq.push(['_addIgnoredRef', 'tuanmei']);
+_gaq.push(['_setDomainName', '.jumei.com']);
+_gaq.push(['_setAllowHash', false]);
+_gaq.push(['_trackPageview']);
+
+window.jumeiSstatistics = window.jumeiSstatistics || [];
+
+// TODO 待替换 start
+window.jumeiSstatisticsAction = '';
+
+jumeiSstatistics.push(['log', '']);
+jumeiSstatistics.push(['lo', '']);
+jumeiSstatistics.push(['sid', '']);
+jumeiSstatistics.push(['cl', '']);
+jumeiSstatistics.push(['mat', '']);
+jumeiSstatistics.push(['bs', '[]']);
+jumeiSstatistics.push(['ps', '[]']);
+jumeiSstatistics.push(['uid', '']);
+jumeiSstatistics.push(['tm', '']);
+jumeiSstatistics.push(['act', '']);
+jumeiSstatistics.push(['aci', '[]']);
+jumeiSstatistics.push(['ip', '']);
+// 待替换 end
+/*  请按下方原代码待替换
+ window.jumeiSstatisticsAction = {if isset($_AD_input.enable)}'{$_AD_input.enable}'{else}''{/if};
+
+ jumeiSstatistics.push(['log', {if isset($_AD_input.log)}'{$_AD_input.log}'{else}''{/if}]);
+ jumeiSstatistics.push(['lo', {if isset($_AD_input.lo)}'{$_AD_input.lo}'{else}''{/if}]);
+ jumeiSstatistics.push(['sid', {if isset($_AD_input.sid)}'{$_AD_input.sid}'{else}''{/if}]);
+ jumeiSstatistics.push(['cl', {if isset($_AD_input.cl)}'{$_AD_input.cl}'{else}''{/if}]);
+ jumeiSstatistics.push(['mat', {if isset($_AD_input.mat)}'{$_AD_input.mat}'{else}''{/if}]);
+ jumeiSstatistics.push(['bs', {if isset($_AD_input.bs)}'[{$_AD_input.bs}]'{else}'[]'{/if}]);
+ jumeiSstatistics.push(['ps', {if isset($_AD_input.ps)}'[{$_AD_input.ps}]'{else}'[]'{/if}]);
+ jumeiSstatistics.push(['uid', {if isset($_AD_input.uid)}'{$_AD_input.uid}'{else}''{/if}]);
+ jumeiSstatistics.push(['tm', {if isset($_AD_input.tm)}'{$_AD_input.tm}'{else}''{/if}]);
+ jumeiSstatistics.push(['act', {if isset($_AD_input.act)}'{$_AD_input.act}'{else}''{/if}]);
+ jumeiSstatistics.push(['aci', {if isset($_AD_input.aci)}'[{$_AD_input.aci}]'{else}'[]'{/if}]);
+ jumeiSstatistics.push(['ip', {if isset($_AD_input.ip)}'{$_AD_input.ip}'{else}''{/if}]);
+ */
+
+</script>
+
+<script type="text/javascript" charset="utf-8" src="https://secure5.jmstatic.com/static_lib/dist/20141110/website.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://secure2.jmstatic.com/static_passport/dist/20150106_2/js/library/jquery.cookie.js"></script>
+<script src="https://secure1.jmstatic.com/static_passport/dist/20150106_2/js/library/es5-shim.js"></script>
+<script src="https://secure2.jmstatic.com/static_passport/dist/20150106_2/js/library/es5-sham.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://secure1.jmstatic.com/static_passport/dist/20150106_2/js/boot.js"></script>
+<script>
+ /* seajs.config({
+    alias: {
+    react: 'library/react-with-addons.min'
+    }
+    }); */
+</script>
+</head>
+
+</head>
+<!-- KEEP THIS!
+<body>
+-->
+<body>
+
+<style>
+    .top_nav_hot{ position: absolute;left:81px;top:-4px;}
+
+</style>
+<div id="header_container">
+    <!--新版的login页面没有头部 -->
+    <div id="logo">
+        <a href="http://www.jumei.com" id="home" title="聚美优品" style="background:url(  https://secure0.jmstatic.com/static_passport/dist/20150106_2/images/logo_new_v1.jpg ) no-repeat top left;"> 化妆品品牌排行榜大全网站聚美优品 </a>
+        <div class="header_logo_box">
+            <a href="http://www.jumei.com/activity_guarantee.html?from=header#bold_consignment" rel="nofollow" class="top_link lightning" target="_blank"></a>
+            <a href="http://www.jumei.com/help/two_for_freeshipping?from=header" rel="nofollow" class="top_link gild" target="_blank"></a>
+            <a href="http://www.jumei.com/activity_aca.html?from=top" rel="nofollow" class="top_link credit" target="_blank"></a>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function () {
+$(".top_hot").hover(function () {
+$(".top_nav_hot").css("display","none")
+},
+function () {
+$(".top_nav_hot").css("display","block")
+}
+);
+});
+</script>
+
+<script>
+  var CHECK_NAME_URL = '/i/account/check_mailorhp';
+  var SUBMIT_URL = '/Reset/getUserInfo';
+
+  var SEND_EMAIL_URL = '/Reset/sendEmail';
+  var SEND_SMS_URL = '/Reset/sendCode';
+  var SMS_COUNT_DOWN = 60;
+  var PARAM_NAME = ""
+
+</script>
+
+<div class="container">
+  <div style="height: 490px;"></div>
+</div>
+
+<script>
+  seajs.use(['forget/index'], function(){});
+</script>
+
+<div class="clear"></div>
+<script type="text/javascript">
+/*301 www域名跳转
+ *jiel
+ */
+$(function () {
+        var cur_location = $.cookie('default_site_25') || '';
+        if (cur_location == '') {
+        $.getJSON(RM_SITE_MAIN_WEBBASEURL + 'i/ajax/getsite?callback=?', function (data) {
+            cur_location = data.site;
+            })
+        }
+        var url_host = window.location.host.slice(0,2); //获取当前地址域名
+
+        if(url_host =='bj' || url_host =='sh'|| url_host =='gz' || url_host =='cd'){
+            if(url_host != cur_location) {
+                $.cookie('default_site_25',url_host,{expires: 1,path: "/",domain: RM_SITE_MAIN_TOPLEVELDOMAINNAME});
+                cur_location = url_host;
+            }
+        }
+        $("body").delegate("a,area", "click", function () {
+            if(cur_location == ''){ cur_location ='www'};
+            var href = $(this).attr("href") || '';
+            if(href.indexOf('/i/deal/mobile_subscribe')<0 && href !=''){
+            var reg = new RegExp("^(http://)(hd(?=.jumei.com)|huodong(?=.jumei.com)|www(?=.jumei.com/i/deal))(.*)$","i");
+            var href =href.replace(reg, "$1"+ cur_location +"$3");
+            $(this).attr("href",href);
+        }
+    })
+})
+</script>
+<style>
+	#footer_container {
+    overflow: hidden;
+    border-top: 1px solid #fff;
+    background: #fff
+}
+</style>
+
+<div id="footer_container" >
+<div id="footer_textarea">
+<div style="display:none"><a href="http://www.jumei.com/deals/new.html">每日更新</a></div>
+
+<div class="footer_con" id="footer_copyright">
+    <p class="footer_copy_con">
+        Copyright &copy; 2010-2014 北京创锐文化传媒有限公司 Jumei.com 保留一切权利。客服热线：400-123-8888 <br/>
+        京公网安备 11010102001226 号 | <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">京ICP证111033号</a> | 食品流通许可证 SP1101051110165515（1-1）
+        | <a href="http://p2.jmstatic.com/activity/2013_chuangrui.jpeg" target="_blank" rel="nofollow">营业执照</a>
+    </p>
+    <p>
+        <a href="javascript:void(0)" class="footer_copy_logo logo01" rel="nofollow"></a>
+        <a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1693268180" target="_blank" class="footer_copy_logo logo02" rel="nofollow"></a>
+        <a href="javascript:void(0)" class="footer_copy_logo logo03" rel="nofollow"></a>
+        <a href="javascript:void(0)" class="footer_copy_logo logo04" rel="nofollow"></a>
+        <a href="https://ss.cnnic.cn/verifyseal.dll?sn=e12070911010031011307708&ct=df&pa=453163" target="_blank" class="footer_copy_logo logo05" rel="nofollow"></a>
+    </p>
+    <script>
+        function change_urlknet(eleId){
+            var str=document.getElementById(eleId).href;
+            var str1=str.substring(0,(str.length-6));
+            str1+=RndNum(6);
+            document.getElementById(eleId).href=str1;
+        }
+        function RndNum(k){
+            var rnd="";
+            for (var i=0;i<k;i++) {
+                rnd+=Math.floor(Math.random()*10);
+            }
+            return rnd;
+        }
+    </script>
+</div>
+</div>
+</div>
+<!--*连续登陆探测 -->
+
+
+<!--点击流用-->
+<script type="text/javascript" charset="utf-8" src="https://secure1.jmstatic.com/static_passport/dist/20150106_2/js/library/clk_jumei.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://secure1.jmstatic.com/static_passport/dist/20150106_2/js/library/Jumei.ClickMap.js"></script>
+
+
+<script type="text/javascript">
+// adwq
+$(function(){
+(function() {
+
+    var new_signup = getCookie('new_signup');
+    if ( new_signup !== null ){
+        _adwq.push(['_setAction',
+            '20rf07',
+            RM_UID,       // 扩展参数, 可填 用户名 或 用户ID(可选)
+            'new_signup' // 事件价值 (可选)
+        ]);
+
+        $.cookie('new_signup',null,{path:'/',domain:RM_SITE_MAIN_TOPLEVELDOMAINNAME});
+    }
+
+
+    var adw = document.createElement('script');
+    adw.type = 'text/javascript';
+    adw.async = true;
+    adw.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://s') + '.emarbox.com/js/adw.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(adw, s);
+})();
+
+//ga
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://secure0.jmstatic.com/static_passport/dist/20150106_2/js/library/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+})();
+
+
+//baidu tongji
+(function() {
+    var baidu_tongji = document.createElement('script'); baidu_tongji.type = 'text/javascript';
+    baidu_tongji.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'hm.baidu.com/h.js?884477732c15fb2f2416fb892282394b';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(baidu_tongji, s);
+})();
+
+//<!--
+    (function (d) {
+        window.bd_cpro_rtid="rjfzrHc";
+        var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+        var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+    })(document);
+//-->
+});
+</script>
+</body>
+</html>
+
